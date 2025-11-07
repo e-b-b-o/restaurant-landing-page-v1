@@ -298,7 +298,7 @@ input {
 .hero--container {
   display: grid;
   place-items: center; /* centers both vertically and horizontally */
-  background: url(/images/ethan-smith-3B_Vlmcd-dY-unsplash.jpg) no-repeat center
+  background: url(/images/compresses_hero_image.jpg) no-repeat center
     center/cover;
   text-align: center;
   height: 550px;
