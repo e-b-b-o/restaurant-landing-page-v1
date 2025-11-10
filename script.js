@@ -11,6 +11,8 @@ const welcomeImageContainer = document.querySelector(
 const whyChooseUsItem = document.querySelectorAll(".why-choose-us-item");
 const whyChooseUsHeading = document.querySelector(".why-choose-us-heading");
 const whyChooseUsTag = document.querySelector(".why-choose-us-tag");
+const storySection = document.querySelector(".story");
+const storyButton = document.querySelector(".story-button");
 
 /* Humberger menu */
 
@@ -84,3 +86,22 @@ const whyChooseUsObserver = new IntersectionObserver(
 );
 
 whyChooseUsObserver.observe(document.querySelector(".why-choose-us"));
+
+/* js animation for story section  */
+
+const storyObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        storySection.classList.add("visible");
+        setTimeout(() => {
+          storyButton.classList.add("visible");
+        }, 1000);
+      }
+      storyObserver.unobserve;
+    });
+  },
+  { threshold: 0.3 }
+);
+
+storyObserver.observe(storySection);
