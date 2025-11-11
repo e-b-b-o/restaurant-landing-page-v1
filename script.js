@@ -105,3 +105,28 @@ const storyObserver = new IntersectionObserver(
 );
 
 storyObserver.observe(storySection);
+
+/* animation for unique services  */
+const uniqueServicesHeading = document.querySelector(
+  ".unique-services-heading"
+);
+const uniqueServicesItem = document.querySelectorAll(".unique-services-item");
+
+const uniqueServiceObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        uniqueServicesHeading.classList.add("visible");
+        uniqueServicesItem.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("visible");
+          }, 500 + index * 400);
+        });
+      }
+      uniqueServiceObserver.unobserve();
+    });
+  },
+  { threshold: 0.2 }
+);
+
+uniqueServiceObserver.observe(document.querySelector(".unique-services"));
