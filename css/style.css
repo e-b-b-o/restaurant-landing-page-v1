@@ -812,6 +812,7 @@ input {
 .testimonial-paragraph {
   font-family: "Playfair Display";
   font-style: italic;
+  font-size: 1.6rem;
 }
 .testimonial-image {
   display: flex;
