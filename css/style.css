@@ -732,7 +732,7 @@ input {
   gap: 0.5rem;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.6s ease-out , transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 .unique-services-item.visible {
   opacity: 1;
@@ -769,5 +769,86 @@ input {
   .unique-services-paragraph {
     font-size: 1.6rem;
     font-family: "Playfair Display";
+  }
+}
+/* testimonial section */
+
+.testimonials {
+  background-color: black;
+  padding: 5rem 2rem;
+}
+.section-title {
+  text-align: center;
+  margin: 0 0 3rem 0;
+  font-family: "Playfair Display";
+}
+.testimonial-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+}
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  place-items: center;
+  padding: 0 3rem;
+  width: 100%;
+  text-align: center;
+  background-color: #0e0e0e;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease;
+}
+.testimonial.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+.testimonial-paragraph {
+  font-family: "Playfair Display";
+  font-style: italic;
+}
+.testimonial-image {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.testimonial-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.testimonial-name-container p {
+  font-size: 1.6rem;
+  opacity: 0.5;
+}
+.testimonial-name-container h4 {
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonials {
+    padding: 8rem 2rem;
+  }
+  .testimonial-container {
+    min-height: 300px;
+    max-width: 700px;
+  }
+  .testimonial-paragraph {
+    font-family: "Playfair Display";
+    font-style: italic;
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .testimonials {
+    padding: 10rem 5rem;
   }
 }
