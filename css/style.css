@@ -198,19 +198,6 @@ a .button {
   display: inline-block;
 }
 
-/* Input Feilds */
-
-input {
-  outline: 0;
-  padding: 1.5rem 3.5rem;
-  border-radius: 20px;
-  margin: 5rem;
-}
-.input--time-date {
-  padding: 1.5rem 0.3rem;
-  width: 19rem;
-}
-
 /* Grid */
 .grid {
   display: grid;
@@ -851,5 +838,60 @@ input {
 @media screen and (min-width: 1024px) {
   .testimonials {
     padding: 10rem 5rem;
+  }
+}
+
+/* reservation */
+.reservation {
+  padding: 5rem 4rem;
+  gap: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+.reservation-heading {
+  margin: 0;
+  text-align: center;
+}
+.reservation-title {
+  font-family: "Playfar Display";
+  margin-top: 0;
+  text-align: center;
+  font-size: 4rem;
+}
+.phone-container > div,
+.date-container > div,
+.name-container > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.email-container {
+  display: flex;
+  flex-direction: column;
+}
+.reservation input {
+  padding: 2rem 3rem;
+  margin: 0 0 1.5rem 0;
+  outline: 0;
+  border-radius: 15px;
+  background-color: #050505;
+  color: #5b5a5a;
+  font-size: 1.6rem;
+  border: 1px solid #d18077;
+  cursor: pointer;
+}
+label {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .name-container,
+  .phone-container,
+  .date-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
   }
 }
