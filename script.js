@@ -30,7 +30,7 @@ const observer = new IntersectionObserver(
         specialItem.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add("visible");
-          }, 500 + index * 400);
+          }, 500 + index * 200);
         });
         observer.unobserve(entry.target);
       }
@@ -53,7 +53,7 @@ const welcomeObserver = new IntersectionObserver(
         });
         setTimeout(() => {
           welcomeImageContainer.classList.add("visible");
-        }, 1000);
+        }, 800);
         welcomeObserver.unobserve(entry.target);
       }
     });
@@ -76,7 +76,7 @@ const whyChooseUsObserver = new IntersectionObserver(
         whyChooseUsItem.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add("visible");
-          }, 500 + index * 400);
+          }, 500 + index * 200);
         });
         whyChooseUsObserver.unobserve(entries);
       }
@@ -101,7 +101,7 @@ const storyObserver = new IntersectionObserver(
       storyObserver.unobserve;
     });
   },
-  { threshold: 0.3 }
+  { threshold: 0.2 }
 );
 
 storyObserver.observe(storySection);
@@ -120,7 +120,7 @@ const uniqueServiceObserver = new IntersectionObserver(
         uniqueServicesItem.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add("visible");
-          }, 500 + index * 400);
+          }, 500 + index * 200);
         });
       }
       uniqueServiceObserver.unobserve();
@@ -131,9 +131,32 @@ const uniqueServiceObserver = new IntersectionObserver(
 
 uniqueServiceObserver.observe(document.querySelector(".unique-services"));
 
-/* Testimonial Autoplay  */
-
+/* Testimonial Autoplay  and animation */
 const testimonials = document.querySelectorAll(".testimonial");
+const testimonialContainer = document.querySelector(".testimonial-container");
+const sectionTitle = document.querySelector(".section-title");
+
+const testimonialObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        sectionTitle.classList.add("visible");
+
+        setTimeout(() => {
+          testimonialContainer.classList.add("visible");
+        }, 100);
+
+        // stop observing only when visible
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+// observe the container, not the list
+testimonialObserver.observe(testimonialContainer);
+
 let index = 0;
 
 function showNextTestimonial() {
@@ -141,6 +164,61 @@ function showNextTestimonial() {
   index = (index + 1) % testimonials.length;
   testimonials[index].classList.add("active");
 }
-setInterval(() => {
-  showNextTestimonial();
-}, 4000);
+
+setInterval(showNextTestimonial, 4000);
+
+/* Animation for Reservation */
+
+const reservationHeading = document.querySelector(".reservation-heading");
+const reservationTitle = document.querySelector(".reservation-title");
+const reservationItems = document.querySelector(".reservation-items");
+const reservationBtn = document.querySelector(".reservation-btn");
+
+const reservationObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          reservationHeading.classList.add("visible");
+          reservationTitle.classList.add("visible");
+        }, 200);
+
+        setTimeout(() => {
+          reservationBtn.classList.add("visible");
+          reservationItems.classList.add("visible");
+        }, 400);
+
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+reservationObserver.observe(document.querySelector(".reservation"));
+
+/* Animation for footer section */
+
+const footerAbout = document.querySelector(".footer-about");
+const footerLinks = document.querySelector(".footer-links");
+const footerBottom = document.querySelector(".footer-bottom");
+
+const footerObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        footerAbout.classList.add("visible");
+        setTimeout(() => {
+          footerLinks.classList.add("visible");
+        }, 400);
+        setTimeout(() => {
+          footerBottom.classList.add("visible");
+        }, 800);
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+footerObserver.observe(document.querySelector(".footer"));

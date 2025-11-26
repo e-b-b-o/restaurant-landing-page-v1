@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+
+  <!-- Facebook -->
+  <symbol id="icon-facebook" viewBox="0 0 48 48">
+  <path d="M24 42.5V18.57a5.07 5.07 0 0 1 5.08-5.07c2.49 0 4.05.74 5.12 2.12"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+
+  <line x1="19.7" y1="23.29" x2="29.85" y2="23.29"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+
+  <path d="M7.48 5.5a2 2 0 0 0-2 2v33a2 2 0 0 0 2 2h33.04a2 2 0 0 0 2-2v-33a2 2 0 0 0-2-2H7.48Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+</symbol>
+
+
+  <!-- Instagram -->
+  <symbol id="icon-instagram" viewBox="0 0 24 24">
+  <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+        
+  <path d="M12 15.5C13.93 15.5 15.5 13.93 15.5 12C15.5 10.07 13.93 8.5 12 8.5C10.07 8.5 8.5 10.07 8.5 12C8.5 13.93 10.07 15.5 12 15.5Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+
+  <path d="M17.64 7H17.65"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+</symbol>
+
+
+  <!-- Telegram -->
+ <symbol id="icon-telegram" viewBox="0 0 256 256">
+  <path d="M228.646 34.7676a11.965 11.965 0 0 0-12.218-2.0752L31.8711 105.1973a12 12 0 0 0 2.0347 22.9346L84 138.1514v61.833a11.814 11.814 0 0 0 7.4077 11.0859 12.171 12.171 0 0 0 4.6685.9444 11.832 11.832 0 0 0 8.4091-3.5459l28.5962-28.5962 42.1934 38.13a11.898 11.898 0 0 0 7.8882 3.002 12.112 12.112 0 0 0 3.7226-.5908 11.898 11.898 0 0 0 8.0132-8.7392L232.5127 46.542a11.972 11.972 0 0 0-3.8667-11.7744ZM32.2749 116.7188a3.866 3.866 0 0 1 2.522-4.0762L203.9722 46.1804 87.0723 130.6077 35.4746 120.2881a3.866 3.866 0 0 1-3.1997-3.5693Zm66.5533 86.0937A4 4 0 0 1 92 199.9844V143.7205l35.064 30.8567ZM224.7148 44.7549 187.1011 208.8877a4 4 0 0 1-6.5415 2.1094l-86.1543-75.8164 129.6631-93.645a3.807 3.807 0 0 1 .6464 3.2196Z"
+        fill="currentColor"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+</symbol>
+
+
+</svg>
+
+

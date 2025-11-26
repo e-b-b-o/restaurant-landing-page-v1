@@ -330,7 +330,7 @@ a .button {
   background: rgba(0, 0, 0, 0.5); /* dark overlay */
   z-index: 0;
 }
-.btn-primary {
+.hero-btn {
   font-size: 1.4rem;
   padding: 1.3rem 2.7rem;
   opacity: 0;
@@ -346,7 +346,7 @@ a .button {
   .hero__content .tagline {
     font-size: 1.8rem;
   }
-  .btn-primary {
+  .hero-btn {
     font-size: 1.8rem;
     padding: 1.5rem 3rem;
   }
@@ -768,6 +768,13 @@ a .button {
   text-align: center;
   margin: 0 0 3rem 0;
   font-family: "Playfair Display";
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .testimonial-container {
   position: relative;
@@ -776,6 +783,13 @@ a .button {
   max-width: 600px;
   margin: 0 auto;
   display: flex;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.testimonial-container.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .testimonial {
   position: absolute;
@@ -851,12 +865,31 @@ a .button {
 .reservation-heading {
   margin: 0;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reservation-title {
   font-family: "Playfar Display";
   margin-top: 0;
   text-align: center;
   font-size: 4rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reservation-items,
+.reservation-btn {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.reservation-title.visible,
+.reservation-heading.visible,
+.reservation-items.visible,
+.reservation-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .phone-container > div,
 .date-container > div,
@@ -885,6 +918,10 @@ label {
   font-size: 1.6rem;
   padding-left: 1rem;
 }
+.reservation-btn {
+  font-size: 1.4rem;
+  padding: 1.3rem 2.7rem;
+}
 
 @media screen and (min-width: 768px) {
   .name-container,
@@ -893,5 +930,95 @@ label {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+  }
+  .reservation {
+    padding: 10rem 5rem;
+  }
+}
+
+/* Footer */
+
+footer {
+  padding: 5rem 2rem;
+  background-color: black;
+  font-family: "Playfair Display";
+}
+footer h3 {
+  color: var(--accent-color);
+}
+.footer-socials {
+  display: flex;
+  gap: 2rem;
+}
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+.footer-image-container {
+  background-color: #d6a419;
+}
+.footer-paragraph {
+  max-width: 500px;
+  min-width: 150px;
+  font-size: 1.8rem;
+}
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+.footer-links-container > ul {
+  list-style: none;
+}
+.footer-lists > a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #a1a0a0;
+  transition: color 0.3s;
+}
+.footer-lists > a:hover {
+  color: #f5f5f5;
+}
+.footer-contact {
+  color: #a1a0a0;
+}
+.footer-content {
+  gap: 2rem;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  width: 32px;
+  height: 32px;
+  color: rgb(103, 105, 106);
+  transition: color 0.3s;
+}
+.icon:hover {
+  color: #d6a419;
+}
+.footer-about,
+.footer-links,
+.footer-bottom {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.footer-about.visible,
+.footer-links.visible,
+.footer-bottom.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media screen and (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
   }
 }
