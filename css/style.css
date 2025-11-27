@@ -250,11 +250,14 @@ a .button {
 }
 .nav__item {
   padding: 0 2rem;
-  color: var(--secondary-color);
   font-size: 2rem;
+}
+.nav__item a {
+  text-decoration: none;
+  color: var(--secondary-color);
   transition: color 0.3s;
 }
-.nav__item:hover {
+.nav__item a:hover {
   color: var(--accent-color);
   cursor: pointer;
 }

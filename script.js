@@ -38,7 +38,8 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-observer.observe(document.querySelector(".specials"));
+const _specialsSection = document.querySelector(".specials");
+if (_specialsSection) observer.observe(_specialsSection);
 
 /* Js animation for welcome  */
 
@@ -60,8 +61,8 @@ const welcomeObserver = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-
-welcomeObserver.observe(document.querySelector(".welcome"));
+const _welcomeSection = document.querySelector(".welcome");
+if (_welcomeSection) welcomeObserver.observe(_welcomeSection);
 
 /* js animation for why choose us */
 
@@ -78,14 +79,14 @@ const whyChooseUsObserver = new IntersectionObserver(
             card.classList.add("visible");
           }, 500 + index * 200);
         });
-        whyChooseUsObserver.unobserve(entries);
+        whyChooseUsObserver.unobserve(entry.target);
       }
     });
   },
   { threshold: 0.2 }
 );
-
-whyChooseUsObserver.observe(document.querySelector(".why-choose-us"));
+const _whyChooseUsSection = document.querySelector(".why-choose-us");
+if (_whyChooseUsSection) whyChooseUsObserver.observe(_whyChooseUsSection);
 
 /* js animation for story section  */
 
@@ -98,13 +99,12 @@ const storyObserver = new IntersectionObserver(
           storyButton.classList.add("visible");
         }, 1000);
       }
-      storyObserver.unobserve;
+      if (entry.isIntersecting) storyObserver.unobserve(entry.target);
     });
   },
   { threshold: 0.2 }
 );
-
-storyObserver.observe(storySection);
+if (storySection) storyObserver.observe(storySection);
 
 /* animation for unique services  */
 const uniqueServicesHeading = document.querySelector(
@@ -123,13 +123,14 @@ const uniqueServiceObserver = new IntersectionObserver(
           }, 500 + index * 200);
         });
       }
-      uniqueServiceObserver.unobserve();
+      if (entry.isIntersecting) uniqueServiceObserver.unobserve(entry.target);
     });
   },
   { threshold: 0.2 }
 );
-
-uniqueServiceObserver.observe(document.querySelector(".unique-services"));
+const _uniqueServicesSection = document.querySelector(".unique-services");
+if (_uniqueServicesSection)
+  uniqueServiceObserver.observe(_uniqueServicesSection);
 
 /* Testimonial Autoplay  and animation */
 const testimonials = document.querySelectorAll(".testimonial");
@@ -155,7 +156,7 @@ const testimonialObserver = new IntersectionObserver(
 );
 
 // observe the container, not the list
-testimonialObserver.observe(testimonialContainer);
+if (testimonialContainer) testimonialObserver.observe(testimonialContainer);
 
 let index = 0;
 
@@ -194,8 +195,8 @@ const reservationObserver = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-
-reservationObserver.observe(document.querySelector(".reservation"));
+const _reservationSection = document.querySelector(".reservation");
+if (_reservationSection) reservationObserver.observe(_reservationSection);
 
 /* Animation for footer section */
 
@@ -207,18 +208,20 @@ const footerObserver = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        footerAbout.classList.add("visible");
+        setTimeout(() => {
+          footerAbout.classList.add("visible");
+        }, 100);
         setTimeout(() => {
           footerLinks.classList.add("visible");
-        }, 400);
+        }, 300);
         setTimeout(() => {
           footerBottom.classList.add("visible");
-        }, 800);
+        }, 500);
         observer.unobserve(entry.target);
       }
     });
   },
   { threshold: 0.2 }
 );
-
-footerObserver.observe(document.querySelector(".footer"));
+const _footerSection = document.querySelector(".footer");
+if (_footerSection) footerObserver.observe(_footerSection);
