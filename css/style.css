@@ -942,7 +942,7 @@ label {
 /* Footer */
 
 footer {
-  padding: 5rem 2rem;
+  padding: 5rem 1.5rem;
   background-color: black;
   font-family: "Playfair Display";
 }
@@ -972,14 +972,14 @@ footer h3 {
 .footer-links {
   display: flex;
   gap: 2rem;
-  justify-content: space-evenly;
-  padding: 2rem;
+  flex-direction: column;
+  padding: 1rem;
 }
 .footer-links-container > ul {
   list-style: none;
 }
 .footer-lists > a {
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-decoration: none;
   color: #a1a0a0;
   transition: color 0.3s;
@@ -989,6 +989,7 @@ footer h3 {
 }
 .footer-contact {
   color: #a1a0a0;
+  font-size: 0.5rem;
 }
 .footer-content {
   gap: 2rem;
@@ -997,6 +998,8 @@ footer h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: #6f6e6e;
 }
 .icon {
   width: 32px;
@@ -1023,5 +1026,11 @@ footer h3 {
 @media screen and (min-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr 1fr;
+  }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    padding: 2rem;
   }
 }
