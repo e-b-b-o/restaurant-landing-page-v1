@@ -1,0 +1,68 @@
+// src/js/data/menu.js
+
+export const menuItems = [
+  {
+    id: 1,
+    name: "Classic Burger",
+    category: "mains",
+    price: 10.99,
+    ingredients: "Beef, onion, cheese, lettuce",
+    image: "images/photo_2_2025-11-06_13-41-13.jpg",
+  },
+  {
+    id: 2,
+    name: "Chicken Soup",
+    category: "starters",
+    price: 6.99,
+    ingredients: "Chicken, carrot, celery",
+    image: "images/photo_2_2025-11-06_13-41-13.jpg",
+  },
+  {
+    id: 3,
+    name: "Chocolate Cake",
+    category: "desserts",
+    price: 5.5,
+    ingredients: "Chocolate, cream",
+    image: "images/photo_2_2025-11-06_13-41-13.jpg",
+  },
+  {
+    id: 4,
+    name: "Chicken Soup",
+    category: "starters",
+    price: 6.99,
+    ingredients: "Chicken, carrot, celery",
+    image: "images/photo_2_2025-11-06_13-41-13.jpg",
+  },
+  {
+    id: 5,
+    name: "Chocolate Cake",
+    category: "desserts",
+    price: 5.5,
+    ingredients: "Chocolate, cream",
+    image: "images/photo_2_2025-11-06_13-41-13.jpg",
+  },
+  {
+    id: 6,
+    name: "Classic Burger",
+    category: "mains",
+    price: 10.99,
+    ingredients: "Beef, onion, cheese, lettuce",
+    image: "images/photo_2_2025-11-06_13-41-13.jpg",
+  },
+  {
+    id: 7,
+    name: "Chocolate Cake",
+    category: "desserts",
+    price: 5.5,
+    ingredients: "Chocolate, cream",
+    image: "images/photo_2_2025-11-06_13-41-13.jpg",
+  },
+  {
+    id: 8,
+    name: "Chocolate Cake",
+    category: "drinks",
+    price: 5.5,
+    ingredients: "Chocolate, cream",
+    image: "images/photo_2_2025-11-06_13-41-13.jpg",
+  },
+];

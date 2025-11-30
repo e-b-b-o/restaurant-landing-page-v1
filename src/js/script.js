@@ -225,3 +225,19 @@ const footerObserver = new IntersectionObserver(
 );
 const _footerSection = document.querySelector(".footer");
 if (_footerSection) footerObserver.observe(_footerSection);
+
+// Menu render , filter , search and pagination
+
+import { renderMenu } from "./components/renderMenu.js";
+import { initFilters } from "./components/filters.js";
+import { initSearch } from "./components/search.js";
+import { initPagination } from "./components/pagination.js";
+
+const menuContainer = document.querySelector(".menu-container");
+
+renderMenu(menuContainer, []); // initial empty state if needed
+
+// Initialize features
+initFilters(menuContainer);
+initSearch(menuContainer);
+initPagination(menuContainer);
