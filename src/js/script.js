@@ -4,7 +4,8 @@ const navTogglerBtn = document.querySelector(".nav__toggler");
 const navList = document.querySelector(".nav__list");
 const specialsTitle = document.querySelector(".specials-title");
 const specialItem = document.querySelectorAll(".special-item");
-const welcomeContent = document.querySelectorAll(".welcome-content-1");
+const specialBtn = document.querySelector(".special-btn");
+const welcomeContent = document.querySelector(".welcome-content");
 const welcomeImageContainer = document.querySelector(
   ".welcome-image-container"
 );
@@ -12,7 +13,8 @@ const whyChooseUsItem = document.querySelectorAll(".why-choose-us-item");
 const whyChooseUsHeading = document.querySelector(".why-choose-us-heading");
 const whyChooseUsTag = document.querySelector(".why-choose-us-tag");
 const storySection = document.querySelector(".story");
-const storyButton = document.querySelector(".story-button");
+const storyImageContainer = document.querySelector(".story-image-container");
+const storyContent = document.querySelector(".story-content");
 
 /* Humberger menu */
 
@@ -30,8 +32,11 @@ const observer = new IntersectionObserver(
         specialItem.forEach((card, index) => {
           setTimeout(() => {
             card.classList.add("visible");
-          }, 500 + index * 200);
+          }, 500 + index * 150);
         });
+        setTimeout(() => {
+          specialBtn.classList.add("visible");
+        }, 500 + specialItem.length * 150);
         observer.unobserve(entry.target);
       }
     });
@@ -47,14 +52,8 @@ const welcomeObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        welcomeContent.forEach((card, index) => {
-          setTimeout(() => {
-            card.classList.add("visible");
-          }, 500 + index * 200);
-        });
-        setTimeout(() => {
-          welcomeImageContainer.classList.add("visible");
-        }, 800);
+        welcomeContent.classList.add("visible");
+        welcomeImageContainer.classList.add("visible");
         welcomeObserver.unobserve(entry.target);
       }
     });
@@ -94,12 +93,10 @@ const storyObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        storySection.classList.add("visible");
-        setTimeout(() => {
-          storyButton.classList.add("visible");
-        }, 1000);
+        storyContent.classList.add("visible");
+        storyImageContainer.classList.add("visible");
+        storyObserver.unobserve(entry.target);
       }
-      if (entry.isIntersecting) storyObserver.unobserve(entry.target);
     });
   },
   { threshold: 0.2 }
@@ -131,42 +128,6 @@ const uniqueServiceObserver = new IntersectionObserver(
 const _uniqueServicesSection = document.querySelector(".unique-services");
 if (_uniqueServicesSection)
   uniqueServiceObserver.observe(_uniqueServicesSection);
-
-/* Testimonial Autoplay  and animation */
-const testimonials = document.querySelectorAll(".testimonial");
-const testimonialContainer = document.querySelector(".testimonial-container");
-const sectionTitle = document.querySelector(".section-title");
-
-const testimonialObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        sectionTitle.classList.add("visible");
-
-        setTimeout(() => {
-          testimonialContainer.classList.add("visible");
-        }, 100);
-
-        // stop observing only when visible
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-// observe the container, not the list
-if (testimonialContainer) testimonialObserver.observe(testimonialContainer);
-
-let index = 0;
-
-function showNextTestimonial() {
-  testimonials[index].classList.remove("active");
-  index = (index + 1) % testimonials.length;
-  testimonials[index].classList.add("active");
-}
-
-setInterval(showNextTestimonial, 4000);
 
 /* Animation for Reservation */
 
@@ -232,12 +193,40 @@ import { renderMenu } from "./components/renderMenu.js";
 import { initFilters } from "./components/filters.js";
 import { initSearch } from "./components/search.js";
 import { initPagination } from "./components/pagination.js";
+import { initBooking } from "./components/booking.js";
+import { setupInFiniteMarquee } from "./utils/infiniteMarquee.js";
 
 const menuContainer = document.querySelector(".menu-container");
 
-renderMenu(menuContainer, []); // initial empty state if needed
+if (menuContainer) {
+  renderMenu(menuContainer, []);
 
-// Initialize features
-initFilters(menuContainer);
-initSearch(menuContainer);
-initPagination(menuContainer);
+  // Initialize features that depend on the menu container
+  initFilters(menuContainer);
+  initSearch(menuContainer);
+  initPagination(menuContainer);
+} else {
+  console.info(
+    "No .menu-container found on this page — skipping menu initialization."
+  );
+}
+try {
+  initBooking();
+} catch (err) {
+  console.error("initBooking threw an error:", err);
+}
+try {
+  setupInFiniteMarquee(".marquee-track");
+} catch (err) {
+  console.error("setupInFiniteMarquee threw an error:", err);
+}
+
+const marqueeTrack = document.querySelector(".marquee-track");
+
+marqueeTrack.addEventListener("mouseenter", () => {
+  marqueeTrack.style.animationPlayState = "paused";
+});
+
+marqueeTrack.addEventListener("mouseleave", () => {
+  marqueeTrack.style.animationPlayState = "running";
+});

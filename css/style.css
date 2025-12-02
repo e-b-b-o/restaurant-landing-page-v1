@@ -133,6 +133,7 @@ img {
 /* Buttons */
 
 .button {
+  display: inline-block;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   padding: 0.9rem 2rem;
@@ -241,10 +242,11 @@ a .button {
   animation: slideDown 0.8s ease-out forwards;
   animation-delay: 0.2s;
 }
-.anchor-logo svg path {
-  fill: var(--primary-color);
-  stroke: var(--accent-color);
-  stroke-width: 10;
+
+.anchor-logo-container {
+  background-color: var(--accent-color);
+  width: 160px;
+  height: 50px;
 }
 .nav__list {
   width: 100%;
@@ -336,6 +338,7 @@ a .button {
 }
 .hero-btn {
   font-size: 1.4rem;
+  text-decoration: none;
   padding: 1.3rem 2.7rem;
   opacity: 0;
   transform: translateY(50px);
@@ -379,7 +382,7 @@ a .button {
   background-color: #050505;
 }
 .specials-title {
-  margin-top: 4rem;
+  margin: 6rem 0 4rem 0;
   color: var(--accent-color);
   opacity: 0;
   transform: translateY(20px);
@@ -390,13 +393,22 @@ a .button {
   opacity: 1;
   transform: translateY(0);
 }
-.specials button {
+.special-btn {
   justify-self: center;
   padding: 1rem 4rem;
   margin-top: 4rem;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, color 0.5s,
+    background-color 0.5s;
+}
+.special-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .specials-grid {
-  gap: 4rem;
+  gap: 5rem;
 }
 .special-item {
   opacity: 0;
@@ -441,10 +453,13 @@ a .button {
 
 @media screen and (min-width: 768px) {
   .specials {
-    padding: 0 2rem 10rem 2rem;
+    padding: 0 6rem 10rem 6rem;
+  }
+  .specials-title {
+    margin: 4rem 0 6rem 0;
   }
   .specials-grid {
-    gap: 2rem;
+    gap: 6rem;
   }
   .special-item img {
     height: 250px;
@@ -480,13 +495,12 @@ a .button {
 .welcome-grid {
   gap: 2rem;
 }
-.welcome-content-1 {
+.welcome-content {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out, color 0.5s,
-    background-color 0.5s;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-.welcome-content-1.visible {
+.welcome-content.visible {
   opacity: 1;
   transform: translateX(0);
 }
@@ -504,8 +518,8 @@ a .button {
 
 .welcome-image-container {
   opacity: 0;
-  transform: translateX(100px);
-  transition: opacity 0.7s, transform 1s ease-out;
+  transform: translateX(50px);
+  transition: opacity 0.8s, transform 0.8s ease-out;
 }
 .welcome-image-container.visible {
   opacity: 1;
@@ -519,6 +533,10 @@ a .button {
 }
 .welcome-image-container > img:hover {
   transform: scale(1.02);
+}
+.welcome-btn {
+  text-decoration: none;
+  font-size: 1.6rem;
 }
 @media screen and (min-width: 768px) {
   .welcome {
@@ -572,6 +590,7 @@ a .button {
 }
 .why-choose-us-heading {
   margin-top: 0;
+  margin-bottom: 4rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -582,10 +601,11 @@ a .button {
   transform: translateY(0);
 }
 .why-choose-us-grid {
-  gap: 2rem;
+  gap: 4rem;
 }
 .why-choose-us-item {
   border: 1px solid var(--secondary-accent);
+  border-radius: 15px;
   padding: 3rem 1rem;
   place-items: center;
   border-radius: 15px;
@@ -605,6 +625,7 @@ a .button {
 .why-choose-us-item p {
   font-size: 1.4rem;
   font-style: oblique;
+  max-width: 300px;
 }
 .why-choose-us svg {
   width: 100px;
@@ -615,6 +636,13 @@ a .button {
 @media screen and (min-width: 768px) {
   .why-choose-us {
     padding: 10rem 10rem;
+  }
+  .why-choose-us-item p {
+    font-size: 1.6rem;
+    padding: 0;
+  }
+  .why-choose-us-grid {
+    gap: 4rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -639,9 +667,6 @@ a .button {
 .story-image-container img {
   border-radius: 15px;
 }
-.story-content {
-  padding: 0.5rem;
-}
 .story-heading {
   margin-top: 2rem;
   font-size: 2.5rem;
@@ -652,41 +677,30 @@ a .button {
   margin-bottom: 2rem;
   font-family: "Playfair Display";
 }
-.story-heading,
-.story-paragraph {
+
+.story-image-container {
   opacity: 0;
-  transform: translateX(100px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.story-image-container img {
-  opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-50px);
   transition: all 0.8s ease-out;
 }
-.story.visible .story-heading,
-.story.visible .story-paragraph,
-.story.visible .story-image-container img {
+.story-image-container.visible {
   opacity: 1;
   transform: translateX(0);
 }
-.story.visible .story-heading {
-  transition-delay: 0.1s;
+.story-content {
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
 }
-.story.visible .story-paragraph {
-  transition-delay: 0.3s;
-}
-.story.visible .story-image-container img {
-  transition-delay: 0.5s;
+.story-content.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 .story-button {
-  opacity: 0;
-  transform: translateX(40px);
+  text-decoration: none;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out,
     background-color 0.5s, color 0.5s;
-}
-.story-button.visible {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 @media screen and (min-width: 768px) {
@@ -706,7 +720,7 @@ a .button {
 }
 .unique-services-heading {
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
   font-family: "Playfair Display";
   opacity: 0;
   transform: translateY(20px);
@@ -734,6 +748,10 @@ a .button {
   height: 200px;
   object-fit: cover;
   border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+.unique-services-item img:hover {
+  transform: scale(1.02);
 }
 .unique-services-h3 {
   color: var(--accent-color);
@@ -765,59 +783,46 @@ a .button {
 /* testimonial section */
 
 .testimonials {
-  background-color: black;
-  padding: 5rem 2rem;
-}
-.section-title {
-  text-align: center;
-  margin: 0 0 3rem 0;
-  font-family: "Playfair Display";
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.section-title.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.testimonial-container {
-  position: relative;
-  overflow: hidden;
-  min-height: 250px;
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.testimonial-container.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.testimonial {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 30px;
-  place-items: center;
-  padding: 0 3rem;
   width: 100%;
+  overflow: hidden;
+  padding: 4rem 0;
+  background: #000000;
+}
+.testimonial-title {
+  font-family: "Playfair Display";
+  font-size: 4rem;
   text-align: center;
-  background-color: #0e0e0e;
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all 0.6s ease;
+  margin-bottom: 6rem;
+  color: var(--accent-color);
+  margin-top: 0;
 }
-.testimonial.active {
-  opacity: 1;
-  transform: translateX(0);
-  position: relative;
+.marquee {
+  width: 100%;
+  overflow: hidden;
 }
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 6rem;
+  animation: scroll 10s linear infinite;
+}
+
+.testimonial {
+  padding: 1.8rem 2rem;
+  min-width: 150px;
+  background: var(--neutral-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  line-height: 1.4;
+  gap: 3rem;
+}
+
 .testimonial-paragraph {
   font-family: "Playfair Display";
   font-style: italic;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  max-width: 400px;
 }
 .testimonial-image {
   display: flex;
@@ -837,6 +842,18 @@ a .button {
 .testimonial-name-container h4 {
   font-size: 1.6rem;
   margin-bottom: 0;
+}
+.stars {
+  color: gold;
+  font-size: 3rem;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -859,12 +876,26 @@ a .button {
   }
 }
 
-/* reservation */
+/* Reservation */
+.bkg {
+  background: url(/images/jamesbkgnd.jpg) no-repeat center center/cover;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
 .reservation {
   padding: 5rem 4rem;
   gap: 1rem;
   max-width: 80rem;
   margin: 0 auto;
+  z-index: 2;
+  position: relative;
 }
 .reservation-heading {
   margin: 0;
@@ -881,6 +912,10 @@ a .button {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reservation-items {
+  display: flex;
+  flex-direction: column;
 }
 .reservation-items,
 .reservation-btn {
@@ -909,12 +944,11 @@ a .button {
 .reservation input {
   padding: 2rem 3rem;
   margin: 0 0 1.5rem 0;
-  outline: 0;
+  outline: none;
   border-radius: 15px;
-  background-color: #050505;
-  color: #5b5a5a;
+  background-color: #adaaaa;
+  color: #000000;
   font-size: 1.6rem;
-  border: 1px solid #d18077;
   cursor: pointer;
 }
 label {
@@ -925,6 +959,10 @@ label {
 .reservation-btn {
   font-size: 1.4rem;
   padding: 1.3rem 2.7rem;
+  margin-top: 4rem;
+}
+::placeholder {
+  color: #4f4f4f;
 }
 
 @media screen and (min-width: 768px) {
