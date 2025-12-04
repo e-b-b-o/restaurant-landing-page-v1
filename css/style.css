@@ -618,6 +618,7 @@ a .button {
   opacity: 1;
   transform: translateY(0);
 }
+
 .why-choose-us-item h3 {
   color: var(--accent-color);
   font-family: "Playfair Display";
@@ -761,6 +762,16 @@ a .button {
 .unique-services-paragraph {
   font-size: 1.8rem;
   font-family: "Playfair Display";
+}
+/* Fix overflow in unique services on phones */
+@media (max-width: 767px) {
+  .unique-services {
+    padding: 3rem 1.5rem;
+  }
+
+  .unique-services-grid {
+    gap: 2rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1010,9 +1021,11 @@ footer h3 {
 }
 .footer-links {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   flex-direction: column;
   padding: 1rem;
+  align-items: center;
+  text-align: center;
 }
 .footer-links-container > ul {
   list-style: none;
@@ -1026,6 +1039,7 @@ footer h3 {
 .footer-lists > a:hover {
   color: var(--accent-color);
 }
+
 .footer-contact {
   color: #a1a0a0;
   font-size: 0.5rem;
@@ -1039,6 +1053,7 @@ footer h3 {
   align-items: center;
   text-align: center;
   color: #6f6e6e;
+  margin-top: 2rem;
 }
 .icon {
   width: 32px;
@@ -1065,12 +1080,23 @@ footer h3 {
 @media screen and (min-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr 1fr;
+    gap: 3rem;
   }
   .footer-links {
     display: flex;
     gap: 2rem;
     flex-direction: row;
-    padding: 2rem;
+    align-items: flex-start;
+    text-align: start;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer-links {
+    display: flex;
+    gap: 8rem;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: start;
   }
 }
 
@@ -1146,4 +1172,22 @@ footer h3 {
   .item-ingredients {
     font-size: 1.4rem;
   }
+}
+
+/* About Page */
+
+.about-hero {
+  gap: 4rem;
+  text-align: start;
+  padding: 10rem;
+  font-family: "Playfair Display";
+}
+.about-hero-content {
+  gap: 2rem;
+}
+.about-hero-title {
+  margin: 0;
+}
+.about-hero-btn {
+  width: 14rem;
 }
