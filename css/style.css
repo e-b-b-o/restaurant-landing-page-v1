@@ -105,6 +105,9 @@ img {
     padding: 3rem 1.5rem;
   }
 
+  /* Prevent testimonial marquee from causing page overflow on small screens */
+  html, body { overflow-x: hidden; }
+  .marquee { position: relative; overflow: hidden; }
   .hero__content .tagline {
     width: 100%;
     padding: 0 1rem;
