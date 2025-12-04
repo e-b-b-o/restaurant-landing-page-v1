@@ -1191,3 +1191,27 @@ footer h3 {
 .about-hero-btn {
   width: 14rem;
 }
+
+/* Fix horizontal overflow on small screens */
+@media (max-width: 767px) {
+  /* Reduce heavy section paddings */
+  .reservation {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero__content .tagline {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  /* Reduce nav item horizontal padding on mobile */
+  .nav__item {
+    padding: 0 0.75rem;
+    font-size: 1.6rem;
+  }
+
+  /* Ensure any large grids don't overflow */
+  .grid {
+    overflow-x: hidden;
+  }
+}
