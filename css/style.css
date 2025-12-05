@@ -22,7 +22,10 @@
 html {
   font-size: 62.5%;
 }
-
+body,
+html {
+  overflow-x: hidden;
+}
 /*  Reset & Box Model */
 * {
   margin: 0;
@@ -292,6 +295,7 @@ a .button {
   place-items: center; /* centers both vertically and horizontally */
   background: url(/images/compresses_hero_image.jpg) no-repeat center
     center/cover;
+  object-fit: cover;
   text-align: center;
   height: 620px;
   position: relative;
@@ -489,7 +493,7 @@ a .button {
 /* Welcome Section */
 
 .welcome {
-  padding: 6rem 4rem;
+  padding: 6rem 2rem;
 }
 .welcome-grid {
   gap: 2rem;
@@ -576,7 +580,7 @@ a .button {
 /* Why choose us section */
 
 .why-choose-us {
-  padding: 5rem 6rem;
+  padding: 5rem 4rem;
 }
 .why-choose-us-tag {
   opacity: 0;
@@ -716,7 +720,7 @@ a .button {
 
 /* unique services we offer */
 .unique-services {
-  padding: 5rem 4rem;
+  padding: 5rem 2rem;
 }
 .unique-services-heading {
   margin-top: 0;
@@ -785,7 +789,7 @@ a .button {
 .testimonials {
   width: 100%;
   overflow: hidden;
-  padding: 4rem 0;
+  padding: 4rem 0rem;
   background: #000000;
 }
 .testimonial-title {
@@ -804,36 +808,28 @@ a .button {
 .marquee-track {
   display: flex;
   flex-wrap: nowrap;
-  white-space: nowrap; /* keeps the cards in one row */
-  animation: scroll 15s linear infinite;
+  animation: scroll 3s linear infinite;
   will-change: transform;
-}
-.marquee-track > * {
-  flex: 0 0 auto;
-  white-space: normal; /* allow text to wrap normally */
-  margin-right: 3rem;
 }
 
 .testimonial {
   padding: 1.8rem 2rem;
-  min-width: 150px;
+  min-width: 100px;
   background: var(--neutral-color);
   border-radius: 20px;
   font-size: 1rem;
   line-height: 1.4;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .testimonial-paragraph {
   font-family: "Playfair Display";
   font-style: italic;
   font-size: 1.8rem;
-  max-width: 400px;
 }
 .testimonial-image {
   display: flex;
   align-items: center;
-  gap: 2rem;
 }
 .testimonial-image img {
   width: 60px;
@@ -879,6 +875,9 @@ a .button {
 @media screen and (min-width: 1024px) {
   .testimonials {
     padding: 10rem 5rem;
+  }
+  .testimonial {
+    gap: 4rem;
   }
 }
 
@@ -948,7 +947,7 @@ a .button {
   flex-direction: column;
 }
 .reservation input {
-  padding: 2rem 3rem;
+  padding: 1.5rem 2.5rem;
   margin: 0 0 1.5rem 0;
   outline: none;
   border-radius: 15px;
@@ -1174,7 +1173,7 @@ footer h3 {
 .about-hero {
   gap: 4rem;
   text-align: start;
-  padding: 10rem;
+  padding: 2rem;
   font-family: "Playfair Display";
 }
 .about-hero-content {
