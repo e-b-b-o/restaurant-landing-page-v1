@@ -259,7 +259,6 @@ import { initFilters } from "./components/filters.js";
 import { initSearch } from "./components/search.js";
 import { initPagination } from "./components/pagination.js";
 import { initBooking } from "./components/booking.js";
-import { setupInFiniteMarquee } from "./utils/infiniteMarquee.js";
 
 const menuContainer = document.querySelector(".menu-container");
 
@@ -280,23 +279,15 @@ try {
 } catch (err) {
   console.error("initBooking threw an error:", err);
 }
-try {
-  setupInFiniteMarquee(".marquee-track");
-} catch (err) {
-  console.error("setupInFiniteMarquee threw an error:", err);
-}
 
-const marqueeTrack = document.querySelector(".marquee-track");
-if (marqueeTrack) {
-  marqueeTrack.addEventListener("mouseenter", () => {
-    marqueeTrack.style.animationPlayState = "paused";
-  });
+// dublicating an carousel content
 
-  marqueeTrack.addEventListener("mouseleave", () => {
-    marqueeTrack.style.animationPlayState = "running";
-  });
-} else {
-  console.info(
-    "No .marquee-track found — skipping marquee hover pause behavior."
-  );
-}
+const tracks = document.querySelectorAll(".carousel--content");
+
+tracks.forEach((track) => {
+  const cards = [...track.children];
+
+  for (const card of cards) {
+    track.appendChild(card.cloneNode(true));
+  }
+});

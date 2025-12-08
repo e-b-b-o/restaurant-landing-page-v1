@@ -9,6 +9,11 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -163,7 +168,7 @@
       <div class="why-choose-us-grid grid grid--1x2">
         <div class="why-choose-us-item grid">
           <svg>
-            <use href="./assets/icons.svg#icon-food"></use>
+            <use href="./assets/icons.svg#icon-foods"></use>
           </svg>
           <h3>Exceptional Taste</h3>
           <p>
@@ -172,8 +177,8 @@
           </p>
         </div>
         <div class="why-choose-us-item grid">
-          <svg class="food-icon">
-            <use href="./assets/icons.svg#icon-fresh"></use>
+          <svg>
+            <use href="./assets/icons.svg#icon-fruits"></use>
           </svg>
           <h3>Fresh Ingredients</h3>
           <p>
@@ -182,9 +187,10 @@
           </p>
         </div>
         <div class="why-choose-us-item grid">
-          <svg class="food-icon">
-            <use href="./assets/icons.svg#icon-hospitality"></use>
+          <svg>
+            <use href="./assets/icons.svg#icon-friendly"></use>
           </svg>
+
           <h3>Warm Hospitality</h3>
           <p>
             At Ebba's Flavor Lab, you're not just a guest — you're family. Our
@@ -192,6 +198,10 @@
           </p>
         </div>
         <div class="why-choose-us-item grid">
+          <svg>
+            <use href="./assets/icons.svg#icon-hospitality"></use>
+          </svg>
+
           <h3>Relaxed Atmosphere</h3>
           <p>
             Enjoy your meal in a cozy, calming environment designed to help you
@@ -276,56 +286,217 @@
         </div>
       </div>
     </section>
-    <section class="testimonials">
-      <h2 class="testimonial-title">Our Customer's Are Saying</h2>
-      <div class="marquee">
-        <div class="marquee-track">
-          <div class="testimonial grid">
-            <div class="stars">★ ★ ★ ★ ★</div>
-            <p class="testimonial-paragraph">
-              Place exceeded my expectations on all fronts. The ambiance was
-              cozy and relaxed, making it a perfect venue for our anniversary
-              dinner. Each dish was prepared and beautifully presented.
-            </p>
-            <div class="testimonial-image">
-              <img src="./images/testimonial.jpg" alt="Smiling Customer" />
-              <div class="testimonial-name-container">
-                <h4>- John M.</h4>
-                <p>Google Reveiws</p>
-              </div>
-            </div>
+    <section class="testimonial-carousel">
+      <div class="carousel--content">
+        <article class="carousel--card">
+          <div class="carousel--image">
+            <img
+              src="./images/testimonial.jpg"
+              alt="image"
+              class="carousel--img"
+            />
           </div>
-          <div class="testimonial grid">
-            <div class="stars">★ ★ ★ ★ ★</div>
-            <p class="testimonial-paragraph">
-              Last night, we dined at place and were simply blown away. From the
-              moment we stepped in, we were enveloped in an inviting atmosphere
-              and greeted with warm smiles.
-            </p>
-            <div class="testimonial-image">
-              <img src="./images/testimonial2.jpg" alt="Smiling Customer" />
-              <div class="testimonial-name-container">
-                <h4>- Sarah K.</h4>
-                <p>Amazom</p>
-              </div>
+          <h3 class="carousel--name">Mark Dwane</h3>
+          <div class="carousel--rating">
+            <div class="carousel--stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
             </div>
+            <h3 class="carousel--number">5.0</h3>
           </div>
-          <div class="testimonial grid">
-            <div class="stars">★ ★ ★ ★ ★</div>
-            <p class="testimonial-paragraph">
-              The culinary experience at place is first to none. The atmosphere
-              is vibrant, the food - nothing short of extraordinary. The food
-              was the highlight of our evening. Highly recommended.
-            </p>
-            <div class="testimonial-image">
-              <img src="./images/testimonial3.jpg" alt="Smiling Customer" />
-              <div class="testimonial-name-container">
-                <h4>- Samuel</h4>
-                <p>Ethipia Et</p>
-              </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            consequuntur, dolor hic fuga modi optio, quis ut molestiae ullam
+            eum, magni architecto illum aliquid tenetur laborum
+          </p>
+        </article>
+
+        <article class="carousel--card">
+          <div class="carousel--image">
+            <img
+              src="./images/testimonial2.jpg"
+              alt="image"
+              class="carousel--img"
+            />
+          </div>
+          <h3 class="carousel--name">George</h3>
+          <div class="carousel--rating">
+            <div class="carousel--stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
             </div>
+            <h3 class="carousel--number">5.0</h3>
           </div>
-        </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            consequuntur, dolor hic fuga modi optio, quis ut molestiae ullam
+            eum, magni architecto illum aliquid tenetur laborum
+          </p>
+        </article>
+
+        <article class="carousel--card">
+          <div class="carousel--image">
+            <img
+              src="./images/testimonial3.jpg"
+              alt="Image"
+              class="carousel--img"
+            />
+          </div>
+          <h3 class="carousel--name">Mark Dwane</h3>
+          <div class="carousel--rating">
+            <div class="carousel--stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <h3 class="carousel--number">5.0</h3>
+          </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            consequuntur, dolor hic fuga modi optio, quis ut molestiae ullam
+            eum, magni architecto illum aliquid tenetur laborum
+          </p>
+        </article>
+
+        <article class="carousel--card">
+          <div class="carousel--image">
+            <img
+              src="./images/testimonial4.jpg"
+              alt="Image"
+              class="carousel--img"
+            />
+          </div>
+          <h3 class="carousel--name">Mark Dwane</h3>
+          <div class="carousel--rating">
+            <div class="carousel--stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <h3 class="carousel--number">5.0</h3>
+          </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            consequuntur, dolor hic fuga modi optio, quis ut molestiae ullam
+            eum, magni architecto illum aliquid tenetur laborum
+          </p>
+        </article>
+      </div>
+      <!-- Carousel card 2-->
+      <div class="carousel--content carousel--reverse">
+        <article class="carousel--card">
+          <div class="carousel--image">
+            <img
+              src="./images/testimonial.jpg"
+              alt="image"
+              class="carousel--img"
+            />
+          </div>
+          <h3 class="carousel--name">Mark Dwane</h3>
+          <div class="carousel--rating">
+            <div class="carousel--stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <h3 class="carousel--number">5.0</h3>
+          </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            consequuntur, dolor hic fuga modi optio, quis ut molestiae ullam
+            eum, magni architecto illum aliquid tenetur laborum
+          </p>
+        </article>
+
+        <article class="carousel--card">
+          <div class="carousel--image">
+            <img
+              src="./images/testimonial2.jpg"
+              alt="image"
+              class="carousel--img"
+            />
+          </div>
+          <h3 class="carousel--name">George</h3>
+          <div class="carousel--rating">
+            <div class="carousel--stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <h3 class="carousel--number">5.0</h3>
+          </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            consequuntur, dolor hic fuga modi optio, quis ut molestiae ullam
+            eum, magni architecto illum aliquid tenetur laborum
+          </p>
+        </article>
+
+        <article class="carousel--card">
+          <div class="carousel--image">
+            <img
+              src="./images/testimonial3.jpg"
+              alt="Image"
+              class="carousel--img"
+            />
+          </div>
+          <h3 class="carousel--name">Mark Dwane</h3>
+          <div class="carousel--rating">
+            <div class="carousel--stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <h3 class="carousel--number">5.0</h3>
+          </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            consequuntur, dolor hic fuga modi optio, quis ut molestiae ullam
+            eum, magni architecto illum aliquid tenetur laborum
+          </p>
+        </article>
+
+        <article class="carousel--card">
+          <div class="carousel--image">
+            <img
+              src="./images/testimonial4.jpg"
+              alt="Image"
+              class="carousel--img"
+            />
+          </div>
+          <h3 class="carousel--name">Mark Dwane</h3>
+          <div class="carousel--rating">
+            <div class="carousel--stars">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <h3 class="carousel--number">5.0</h3>
+          </div>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            consequuntur, dolor hic fuga modi optio, quis ut molestiae ullam
+            eum, magni architecto illum aliquid tenetur laborum
+          </p>
+        </article>
       </div>
     </section>
     <section class="bkg">
