@@ -291,3 +291,34 @@ tracks.forEach((track) => {
     track.appendChild(card.cloneNode(true));
   }
 });
+// Animation for About Page
+const journey = document.querySelector(".journey");
+const journeyTitle = document.querySelector(".journey--title");
+const journeyCard = document.querySelectorAll(".journey--card");
+
+if (journey && journeyTitle && journeyCard && journeyCard.length > 0) {
+  const journeyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // CSS for the About journey section uses the `active` class.
+          // Add `active` so transitions defined in CSS are applied.
+          journeyTitle.classList.add("active");
+          journeyCard.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add("active");
+            }, 500 + index * 150);
+          });
+          journeyObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  journeyObserver.observe(journey);
+} else {
+  console.info(
+    "Journey section or required elements missing — skipping journey animation."
+  );
+}

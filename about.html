@@ -20,59 +20,224 @@
     <title>Ebba's-Flavor-Labs</title>
   </head>
   <body>
-    <header>
-      <nav class="nav collapsible">
-        <div class="anchor-logo-container">
-          <a class="anchor-logo" href="/"
-            ><img src="./images/restaurant-logo.svg" alt="restaurant-logo" />
-          </a>
+    <div class="about-bkg">
+      <header>
+        <nav class="nav collapsible">
+          <div class="anchor-logo-container">
+            <a class="anchor-logo" href="/"
+              ><img src="./images/restaurant-logo.svg" alt="restaurant-logo" />
+            </a>
+          </div>
+          <svg
+            class="nav__toggler"
+            width="30px"
+            height="30px"
+            viewBox="0 0 24 24"
+            fill="#0f0f0f"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 6H20M4 12H20M4 18H20"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <ul class="list nav__list collapsible--content">
+            <li class="nav__item"><a href="index.html">Home</a></li>
+            <li class="nav__item"><a href="about.html">About</a></li>
+            <li class="nav__item">
+              <a href="menu.html">Menu</a>
+            </li>
+            <li class="nav__item"><a href="contact.html">Contact</a></li>
+            <li class="nav__item">
+              <a href="book_a_table.html">Book A Table</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section class="about-hero grid grid--1x2">
+        <div class="about-hero-content grid">
+          <h1 class="about-hero-title">
+            A Journey of <span class="color">Taste</span> &
+            <span class="color">Innovation</span>
+          </h1>
+          <p class="about-hero-paragraph">
+            Every dish begins with inspiration. At Ebbas Flavor Lab, we
+            transform simple ingredients into flavorful experiences that bring
+            joy, comfort, and connection to every plate.
+          </p>
+          <a href="book_a_table.html" class="about-hero-btn button btn-primary"
+            >Book A Table</a
+          >
         </div>
-        <svg
-          class="nav__toggler"
-          width="30px"
-          height="30px"
-          viewBox="0 0 24 24"
-          fill="#0f0f0f"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4 6H20M4 12H20M4 18H20"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+        <div class="about-hero-image">
+          <img
+            src="./images/ethan-smith-3B_Vlmcd-dY-unsplash.jpg"
+            alt="A Smiling Person"
           />
-        </svg>
-        <ul class="list nav__list collapsible--content">
-          <li class="nav__item"><a href="index.html">Home</a></li>
-          <li class="nav__item"><a href="about.html">About</a></li>
-          <li class="nav__item">
-            <a href="menu.html">Menu</a>
-          </li>
-          <li class="nav__item"><a href="contact.html">Contact</a></li>
-          <li class="nav__item">
-            <a href="book_a_table.html">Book A Table</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section class="about-hero grid--1x2">
-      <div class="about-hero-content grid">
-        <h1 class="about-hero-title">A Journey of Taste & Innovation</h1>
-        <p class="about-hero-paragraph">
-          Every dish begins with inspiration. At Ebbas Flavor Lab, we transform
-          simple ingredients into flavorful experiences that bring joy, comfort,
-          and connection to every plate.
-        </p>
-        <a href="book_a_table.html" class="about-hero-btn button btn-primary"
-          >Book A Table</a
-        >
-      </div>
-      <div class="about-hero-image">
-        <img src="./images/jamesbkgnd.jpg" alt="A Smiling Person" />
+        </div>
+      </section>
+    </div>
+    <section class="journey">
+      <h2 class="journey--title">How it All Began</h2>
+      <div class="journey--container grid grid--1x2">
+        <div class="journey--card">
+          <div class="journey-image-container">
+            <img class="top-arch-img" src="/images/Family.jpg" alt="image" />
+          </div>
+          <h3 class="journey-card-title">The First Spark</h3>
+          <p class="journey-paragraph">
+            It all began during a warm family gathering, where I realized the
+            magic that food can bring to people. Surrounded by laughter and
+            love, I saw firsthand how a shared meal could create unforgettable
+            moments. That's when the idea of our restaurant was born.
+          </p>
+        </div>
+        <div class="journey--card">
+          <div class="journey-image-container">
+            <img class="top-arch-img" src="/images/FirstShef.jpg" alt="image" />
+          </div>
+          <h3 class="journey-card-title">The First Chef</h3>
+          <p class="journey-paragraph">
+            Our vision needed a culinary maestro to bring it to life. Enter our
+            chef — a passionate innovator who shares our love for storytelling
+            through food. Together, we began crafting dishes that not only
+            satisfy the appetite but also tell a story with every bite.
+          </p>
+        </div>
+        <div class="journey--card">
+          <div class="journey-image-container">
+            <img
+              class="top-arch-img"
+              src="/images/jamesbkgnd.jpg"
+              alt="image"
+            />
+          </div>
+          <h3 class="journey-card-title">Growing Strong</h3>
+          <p class="journey-paragraph">
+            From a small, cozy eatery, we quickly grew into a beloved
+            destination for food lovers. Word spread, and our dedication to
+            fresh ingredients, unique flavors, and exceptional service drew
+            people from near and far.
+          </p>
+        </div>
+        <div class="journey--card">
+          <div class="journey-image-container">
+            <img class="top-arch-img" src="/images/Evolving.jpg" alt="image" />
+          </div>
+          <h3 class="journey-card-title">The Evolution</h3>
+          <p class="journey-paragraph">
+            Innovation has always been at the heart of what we do. From
+            embracing online reservations to introducing fast delivery services,
+            we constantly adapt to make every guest experience effortless,
+            enjoyable, and memorable.
+          </p>
+        </div>
       </div>
     </section>
+    <section class="why-choose-us">
+      <h3 class="why-choose-us-tag">WHY CHOOSE US</h3>
+      <h2 class="why-choose-us-heading">
+        Crafting Flavor, Comfort, and Experience
+      </h2>
+      <div class="why-choose-us-grid grid grid--1x4">
+        <div class="why-choose-us-item grid">
+          <svg>
+            <use href="./assets/icons.svg#icon-foods"></use>
+          </svg>
+          <h3>Exceptional Taste</h3>
+          <p>
+            Every dish is prepared with passion, blending fresh ingredients and
+            bold spices to deliver unforgettable flavors.
+          </p>
+        </div>
+        <div class="why-choose-us-item grid">
+          <svg>
+            <use href="./assets/icons.svg#icon-fruits"></use>
+          </svg>
+          <h3>Fresh Ingredients</h3>
+          <p>
+            We believe that great meals start with freshness — that's why we
+            handpick the finest produce, meats, and herbs daily.
+          </p>
+        </div>
+        <div class="why-choose-us-item grid">
+          <svg>
+            <use href="./assets/icons.svg#icon-friendly"></use>
+          </svg>
 
+          <h3>Warm Hospitality</h3>
+          <p>
+            At Ebba's Flavor Lab, you're not just a guest — you're family. Our
+            friendly team ensures every visit feels personal and special.
+          </p>
+        </div>
+        <div class="why-choose-us-item grid">
+          <svg>
+            <use href="./assets/icons.svg#icon-hospitality"></use>
+          </svg>
+
+          <h3>Relaxed Atmosphere</h3>
+          <p>
+            Enjoy your meal in a cozy, calming environment designed to help you
+            unwind and savor every bite.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="bkg">
+      <div class="overlay"></div>
+      <div class="reservation grid">
+        <h3 class="reservation-heading">-- BOOK A TABLE --</h3>
+        <h2 class="reservation-title">Make a Reservation</h2>
+        <form class="reservation-items">
+          <div class="name-container">
+            <div>
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" placeholder="Julies" />
+            </div>
+            <div>
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" placeholder="Mark" />
+            </div>
+          </div>
+          <div class="email-container">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="JuliesMarkus@gmail.com"
+            />
+          </div>
+          <div class="phone-container">
+            <div>
+              <label for="phone">Phone</label>
+              <input type="text" id="phone" placeholder="+251992934232" />
+            </div>
+            <div>
+              <label for="time">Time</label>
+              <input type="time" id="time" />
+            </div>
+          </div>
+          <div class="date-container">
+            <div>
+              <label for="date">Date</label>
+              <input type="date" id="date" />
+            </div>
+            <div>
+              <label for="person">Person</label>
+              <input type="number" id="person" />
+            </div>
+          </div>
+          <button type="submit" class="button btn-primary reservation-btn">
+            BOOK YOUR TABLE
+          </button>
+        </form>
+        <p class="error-msg"></p>
+      </div>
+    </section>
     <footer class="footer grid">
       <div class="footer-content grid">
         <div class="footer-column footer-about">

@@ -660,7 +660,7 @@ a .button {
 }
 @media screen and (min-width: 1024px) {
   .why-choose-us {
-    padding: 10rem 15rem;
+    padding: 10rem 10rem;
   }
 }
 
@@ -830,7 +830,7 @@ a .button {
   margin: 0;
 }
 .carousel--name {
-  margin: 0.5rem 0 1.5rem 0;
+  margin: 1rem 0 1rem 0;
 }
 .carousel--rating {
   display: flex;
@@ -868,6 +868,11 @@ a .button {
 .carousel--content:hover {
   animation-play-state: paused;
 }
+.testimonial--heading {
+  margin: 0 0 2rem 0;
+  font-family: "Playfair Display";
+  padding-inline: 2rem;
+}
 
 @keyframes scroll {
   0% {
@@ -878,7 +883,7 @@ a .button {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .carousel--card {
     width: 250px;
     margin-bottom: 2rem;
@@ -889,12 +894,15 @@ a .button {
     margin-inline: auto;
     row-gap: 3rem;
   }
+  .testimonial--heading {
+    padding-left: 30rem;
+  }
   .testimonial-carousel::before,
   .testimonial-carousel::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 40%;
+    width: 20%;
     height: 100%;
     z-index: 1;
   }
@@ -910,6 +918,11 @@ a .button {
     width: 370px;
     padding: 3rem 2rem;
     border-radius: 4rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .testimonial--heading {
+    padding-left: 50rem;
   }
 }
 /* Reservation */
@@ -999,6 +1012,10 @@ label {
 }
 ::placeholder {
   color: #4f4f4f;
+}
+.error-msg {
+  font-size: 3rem;
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 768px) {
@@ -1125,6 +1142,141 @@ footer h3 {
   }
 }
 
+/* About Page */
+
+/* About Hero*/
+.about-bkg {
+  background: url(/images/compresses_hero_image.jpg);
+}
+.about-hero {
+  gap: 2rem;
+  text-align: start;
+  padding: 2rem;
+  font-family: "Playfair Display";
+}
+.color {
+  color: var(--accent-color);
+}
+
+.about-hero-content {
+  gap: 1rem;
+  justify-self: start;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.8s ease-out forwards;
+}
+.about-hero-title {
+  margin: 0;
+}
+.about-hero-btn {
+  width: 14rem;
+  text-decoration: none;
+}
+.about-hero-image {
+  margin: auto 0;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease-out forwards;
+}
+@media screen and (min-width: 768px) {
+  .about-hero {
+    height: 500px;
+    place-items: center;
+  }
+  .about-hero-title {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about-hero {
+    padding: 8rem;
+    gap: 0;
+    height: 650px;
+    place-items: center;
+  }
+
+  .about-hero-title {
+    font-size: 7rem;
+    line-height: 80px;
+  }
+  .about-hero-title,
+  .about-hero-paragraph {
+    width: 40rem;
+  }
+}
+
+/* About Journey */
+
+.journey {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #070707;
+}
+.journey--title {
+  margin: 0 0 3rem 0;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 3.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.journey--title.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.journey--container {
+  gap: 4rem;
+  justify-items: center;
+}
+.journey--card {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.journey--card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.journey-image-container {
+  margin: 0 auto;
+  max-height: 400px;
+}
+.top-arch-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 225px 225px 0 0;
+}
+.journey-card-title {
+  margin: 0;
+  color: #d6a419;
+}
+@media screen and (min-width: 1024px) {
+  .journey {
+    padding: 8rem;
+  }
+  .journey--title {
+    font-size: 6rem;
+    margin-bottom: 10rem;
+  }
+  .journey--container {
+    gap: 6rem;
+  }
+  .journey--card {
+    max-width: 500px;
+  }
+  .journey-image-container {
+    margin: 0 auto;
+    height: 500px;
+  }
+}
+
 /* Style for menu page */
 .menu-page {
   padding: 1rem 2rem;
@@ -1197,22 +1349,4 @@ footer h3 {
   .item-ingredients {
     font-size: 1.4rem;
   }
-}
-
-/* About Page */
-
-.about-hero {
-  gap: 4rem;
-  text-align: start;
-  padding: 2rem;
-  font-family: "Playfair Display";
-}
-.about-hero-content {
-  gap: 2rem;
-}
-.about-hero-title {
-  margin: 0;
-}
-.about-hero-btn {
-  width: 14rem;
 }
