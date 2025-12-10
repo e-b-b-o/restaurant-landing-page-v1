@@ -307,7 +307,7 @@ if (journey && journeyTitle && journeyCard && journeyCard.length > 0) {
           journeyCard.forEach((card, index) => {
             setTimeout(() => {
               card.classList.add("active");
-            }, 500 + index * 150);
+            }, 500 + index * 100);
           });
           journeyObserver.unobserve(entry.target);
         }
