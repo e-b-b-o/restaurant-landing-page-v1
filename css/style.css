@@ -482,11 +482,11 @@ a .button {
     height: 200px;
   }
   .special-item-price > h3 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   .price {
     color: var(--accent-color);
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -1229,6 +1229,9 @@ footer h3 {
   gap: 4rem;
   justify-items: center;
 }
+.journey--container :nth-child(3) {
+  max-width: 300px;
+}
 .journey--card {
   display: grid;
   gap: 1rem;
@@ -1282,6 +1285,12 @@ footer h3 {
   padding: 1rem 2rem;
   font-family: "Playfair Display";
 }
+.menu-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
 .menu-page h1 {
   color: var(--accent-color);
   font-family: "Playfair Display";
@@ -1290,22 +1299,28 @@ footer h3 {
 .menu-page p {
   max-width: 500px;
 }
+.menu-item {
+  background-color: var(--neutral-color);
+  padding: 2rem;
+  border-radius: 5px;
+}
 .menu-item .price {
   font-size: 1.6rem;
 }
 #menu-search {
   outline: 0;
-  padding: 1rem 1rem;
+  padding: 1.5rem 1.5rem;
   width: 100%;
   border-radius: 15px;
   border: 0;
-  margin-top: 1rem;
-  max-width: 500px;
-  font-size: 1.3rem;
+  margin-top: 2rem;
+  max-width: 600px;
+  font-size: 1.8rem;
   transition: box-shadow 0.3s;
 }
+
 #menu-search:focus {
-  box-shadow: 0 0 0 3px #524c3b;
+  box-shadow: 0 0 0 5px #4f4f4f;
 }
 .filters {
   margin: 1rem 0;
@@ -1324,8 +1339,34 @@ footer h3 {
   background-color: black;
   color: #d6a419;
 }
+.menu-page-title,
+.menu-intro,
+#menu-search {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.menu-page-title.active,
+.menu-intro.active,
+#menu-search.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-item,
+.filters {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.menu-item.active,
+.filters.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Staggering handled in JS; CSS delays not required here */
 .menu-container {
   gap: 3rem;
+  margin-bottom: 4rem;
 }
 .menu-item-heading {
   margin: 0.5rem 0 0 0;
@@ -1348,5 +1389,32 @@ footer h3 {
 @media screen and (min-width: 768px) {
   .item-ingredients {
     font-size: 1.4rem;
+  }
+  .menu-page h1 {
+    font-size: 10rem;
+  }
+  .menu-page-container {
+    padding: 6rem;
+    gap: 1rem;
+  }
+  .filters button {
+    padding: 1.5rem 3rem;
+    margin: 1.5rem;
+    font-size: 1.8rem;
+  }
+  #menu-search {
+    font-size: 2rem;
+  }
+  .menu-intro {
+    text-align: center;
+  }
+  #load-more {
+    font-size: 1.8rem;
+    padding: 1.5rem 3rem;
+    margin: 4rem 0;
+  }
+  .menu-page .price {
+    font-size: 1.8rem;
+    font-weight: bold;
   }
 }

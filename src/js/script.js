@@ -274,10 +274,18 @@ if (menuContainer) {
     "No .menu-container found on this page — skipping menu initialization."
   );
 }
-try {
-  initBooking();
-} catch (err) {
-  console.error("initBooking threw an error:", err);
+// Initialize booking only if the booking form exists on the page
+const _bookingForm = document.querySelector(".reservation-items");
+if (_bookingForm) {
+  try {
+    initBooking();
+  } catch (err) {
+    console.error("initBooking threw an error:", err);
+  }
+} else {
+  console.info(
+    "No .reservation-items found — skipping booking initialization."
+  );
 }
 
 // dublicating an carousel content
@@ -321,4 +329,63 @@ if (journey && journeyTitle && journeyCard && journeyCard.length > 0) {
   console.info(
     "Journey section or required elements missing — skipping journey animation."
   );
+}
+
+// Animation for menu page
+
+const menuPageSection = document.querySelector(".menu-page");
+const menuPageTitle = document.querySelector(".menu-page-title");
+const menuPageItems = document.querySelectorAll(".menu-item");
+const menuIntro = document.querySelector(".menu-intro");
+const menuSearch = document.querySelector("#menu-search");
+const menuFilterBtns = document.querySelector(".filters");
+
+if (menuPageSection) {
+  // helper: animate menu elements (re-queries `.menu-item` to pick up newly rendered items)
+  function animateMenuPage() {
+    if (menuPageTitle) menuPageTitle.classList.add("active");
+    if (menuIntro) menuIntro.classList.add("active");
+    if (menuFilterBtns) menuFilterBtns.classList.add("active");
+    if (menuSearch) menuSearch.classList.add("active");
+
+    // Re-query items in case they were rendered after initial script run
+    const items = Array.from(document.querySelectorAll(".menu-item"));
+    if (items.length > 0) {
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("active");
+        }, 500 + index * 150);
+      });
+    }
+  }
+
+  const manuPageObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateMenuPage();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  manuPageObserver.observe(menuPageSection);
+
+  // If menu items are rendered dynamically later, trigger animation after render
+  // If the menu section is already in view when rendering completes, animate immediately.
+  const onMenuRendered = () => {
+    const rect = menuPageSection.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom >= 0;
+    if (inView) animateMenuPage();
+  };
+
+  // Listen to the custom event dispatched by `renderMenu` after it populates the DOM
+  const menuContainerElement = document.querySelector(".menu-container");
+  if (menuContainerElement) {
+    menuContainerElement.addEventListener("menu:rendered", onMenuRendered);
+  }
+} else {
+  console.info("No .menu-page found — skipping menu page animation.");
 }

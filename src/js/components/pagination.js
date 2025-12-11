@@ -4,7 +4,7 @@ import { menuItems } from "../data/menu.js";
 import { createMenuItem } from "./renderMenu.js";
 
 let currentIndex = 0;
-const batchSize = 6;
+const batchSize = 8;
 
 export function initPagination(menuContainer) {
   const loadBtn = document.querySelector("#load-more");
