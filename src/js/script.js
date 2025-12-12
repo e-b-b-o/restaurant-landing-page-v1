@@ -373,8 +373,7 @@ if (menuPageSection) {
 
   manuPageObserver.observe(menuPageSection);
 
-  // If menu items are rendered dynamically later, trigger animation after render
-  // If the menu section is already in view when rendering completes, animate immediately.
+  // Also listen to menu render events to trigger animation when new items are added
   const onMenuRendered = () => {
     const rect = menuPageSection.getBoundingClientRect();
     const inView = rect.top < window.innerHeight && rect.bottom >= 0;
@@ -382,10 +381,48 @@ if (menuPageSection) {
   };
 
   // Listen to the custom event dispatched by `renderMenu` after it populates the DOM
+
   const menuContainerElement = document.querySelector(".menu-container");
   if (menuContainerElement) {
     menuContainerElement.addEventListener("menu:rendered", onMenuRendered);
   }
 } else {
   console.info("No .menu-page found — skipping menu page animation.");
+}
+
+// Animation for Contact Page
+
+const contactForm = document.querySelector(".contact--form");
+const contactDirectly = document.querySelector(".contact--directly");
+
+if (contactForm) {
+  const contactFormObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          contactForm.classList.add("active");
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.9 }
+  );
+
+  contactFormObserver.observe(contactForm);
+}
+
+if (contactDirectly) {
+  const contactDirectlyObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          contactDirectly.classList.add("active");
+          contactDirectly.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  contactDirectlyObserver.observe(contactDirectly);
 }

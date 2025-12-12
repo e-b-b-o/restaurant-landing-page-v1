@@ -179,7 +179,6 @@ img {
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -1454,7 +1453,7 @@ footer h3 {
 /* Contact Page style */
 
 .contact--page {
-  padding: 5rem 2rem;
+  padding: 10rem 2rem;
   display: flex;
   flex-direction: column;
   font-family: "Playfair Display";
@@ -1466,25 +1465,39 @@ footer h3 {
 }
 .contact--title {
   font-size: 4rem;
-  margin: 0;
+  margin: 0 0 1rem 0;
   color: var(--accent-color);
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideDown 0.8s ease forwards;
 }
 .contact--paragraph {
   max-width: 600px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 5rem auto;
   font-size: 1.8rem;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideDown 0.8s ease forwards;
+  animation-delay: 0.1s;
 }
 .contact--form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 700px; /* increased max width */
+  max-width: 700px;
   width: 100%;
-  margin: 0 auto; /* center the form within its container */
-  align-items: stretch; /* make inputs take full width */
+  margin: 0 auto;
+  align-items: stretch;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.contact--form.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 .name-email-container {
   display: flex;
@@ -1519,6 +1532,13 @@ footer h3 {
   text-align: center;
   gap: 4rem;
   margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.contact--directly.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 .contact--directly i {
   font-size: 4rem;
@@ -1562,6 +1582,9 @@ footer h3 {
   }
   .contact--title {
     font-size: 8rem;
+  }
+  .contact--paragraph {
+    margin-bottom: 10rem;
   }
   .name-email-container {
     flex-direction: row;
