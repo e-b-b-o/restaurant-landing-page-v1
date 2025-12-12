@@ -986,9 +986,38 @@ a .button {
   flex-direction: column;
   flex: 1;
 }
+.date--container,
+.time--container {
+  position: relative;
+}
 .email-container {
   display: flex;
   flex-direction: column;
+}
+.time--container input,
+.date--container input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 16px;
+  outline: none;
+  appearance: none;
+}
+.time--container i,
+.date--container i {
+  position: absolute;
+  right: 30px;
+  top: 60%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #000000;
+  font-size: 2rem;
+}
+.date--container input::-webkit-calendar-picker-indicator,
+.time--container input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0;
 }
 .reservation input {
   padding: 1.5rem 2.5rem;
@@ -998,11 +1027,11 @@ a .button {
   background-color: #adaaaa;
   color: #000000;
   font-size: 1.6rem;
-  cursor: pointer;
   width: 100%;
   box-sizing: border-box;
   display: block;
 }
+
 label {
   margin-bottom: 0.5rem;
   font-size: 1.6rem;
