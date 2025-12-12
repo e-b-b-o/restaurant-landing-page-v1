@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,7 +62,74 @@
         </ul>
       </nav>
     </header>
-    
+    <section class="contact--page">
+      <div class="contact--content grid">
+        <h1 class="contact--title">Get In Touch</h1>
+        <p class="contact--paragraph">
+          We'd love to hear from you! Whether you have questions, feedback, or
+          want to make a reservation, feel free to reach out.
+        </p>
+
+        <form class="contact--form">
+          <div class="name-email-container">
+            <div class="contact-name-container">
+              <label for="contact--name">Name</label>
+              <input type="text" id="contact--name" placeholder="Julies" />
+            </div>
+            <div class="contact-email-container">
+              <label for="contact--email">Email Address</label>
+              <input
+                type="email"
+                id="contact--email"
+                placeholder="JuliesMarkus@gmail.com"
+              />
+            </div>
+          </div>
+
+          <div class="subject--container">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" />
+          </div>
+
+          <div class="message--container">
+            <label for="message">Message</label>
+            <input type="text" id="message" />
+          </div>
+
+          <button type="submit" class="button btn-primary contact--btn">
+            Send Message
+          </button>
+        </form>
+        <p class="error-msg"></p>
+      </div>
+    </section>
+    <section class="contact--directly">
+      <div class="call--us">
+        <i class="ri-phone-line"></i>
+        <div class="call-us-content">
+          <h3>Call Us</h3>
+          <p>+251 99 123 4567</p>
+        </div>
+      </div>
+      <div class="get--us">
+        <i class="ri-map-pin-line"></i>
+        <div class="get-us-content">
+          <h3>Get Us</h3>
+          <p>Adama, Ethiopia</p>
+          <a href="https://maps.app.goo.gl/BY5nS2EWbqR22yUR7?g_st=atm">
+            Location
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+      <div class="email--us">
+        <i class="ri-mail-line"></i>
+        <div class="email-us-content">
+          <h3>Email Us</h3>
+          <p>contact@EbbasFlavorLab.com</p>
+        </div>
+      </div>
+    </section>
     <footer class="footer grid">
       <div class="footer-content grid">
         <div class="footer-column footer-about">
@@ -71,27 +144,22 @@
           </div>
 
           <div class="footer-socials">
-            <a href="#">
-              <svg class="icon icon1">
-                <use href="./assets/icons.svg#icon-facebook"></use>
-              </svg>
-            </a>
-            <a href="#">
+            <a href="https://instagram.com/e.b.b.o">
               <svg class="icon icon1">
                 <use href="./assets/icons.svg#icon-instagram"></use>
               </svg>
             </a>
-            <a href="https://t.me/YOUR-USERNAME">
+            <a href="https://t.me/Dev_eee">
               <svg class="icon icon1">
                 <use href="./assets/icons.svg#icon-telegram"></use>
               </svg>
             </a>
-            <a href="https://github.com/YOUR-USERNAME">
+            <a href="https://github.com/e-b-b-o">
               <svg class="icon icon1">
                 <use href="./assets/icons.svg#icon-github"></use>
               </svg>
             </a>
-            <a href="https://www.linkedin.com/in/YOUR-USERNAME">
+            <a href="https://www.linkedin.com/in/eba-gech-73aa21358">
               <svg class="icon icon1">
                 <use href="./assets/icons.svg#icon-linkedin"></use>
               </svg>
