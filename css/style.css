@@ -1526,19 +1526,26 @@ footer h3 {
 
 /* Contact Directly Section */
 .contact--directly {
+  margin-bottom: 8rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.contact-directly-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 4rem;
-  margin-bottom: 4rem;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .contact--directly.active {
   opacity: 1;
   transform: translateY(0);
+}
+.contact-directly-title {
+  text-align: center;
+  font-family: "Playfair Display";
+  margin: 0 0 4rem 0;
 }
 .contact--directly i {
   font-size: 4rem;
@@ -1575,7 +1582,7 @@ footer h3 {
   .contact--content {
     gap: 2rem;
   }
-  .contact--directly {
+  .contact-directly-container {
     flex-direction: row;
     justify-content: center;
     gap: 10rem;
@@ -1583,6 +1590,7 @@ footer h3 {
   .contact--title {
     font-size: 8rem;
   }
+
   .contact--paragraph {
     margin-bottom: 10rem;
   }
