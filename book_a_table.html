@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,12 +51,75 @@
         </svg>
         <ul class="list nav__list collapsible--content">
           <li class="nav__item"><a href="index.html">Home</a></li>
-          <li class="nav__item"><a href="menu.html">Menu</a></li>
           <li class="nav__item"><a href="about.html">About</a></li>
+          <li class="nav__item">
+            <a href="menu.html">Menu</a>
+          </li>
           <li class="nav__item"><a href="contact.html">Contact</a></li>
+          <li class="nav__item">
+            <a href="book_a_table.html">Book A Table</a>
+          </li>
         </ul>
       </nav>
     </header>
+    <section class="book--section">
+      <h1 class="contact--title">Book A Table</h1>
+      <p class="contact--paragraph">
+        Good food deserves the right setting. Secure your table in just a few
+        clicks and enjoy fresh flavors, warm service, and a space made for
+        connection
+      </p>
+      <div class="reservation grid">
+        <h3 class="reservation-heading">-- BOOK A TABLE --</h3>
+        <h2 class="reservation-title">Make a Reservation</h2>
+        <form class="reservation-items">
+          <div class="name-container">
+            <div>
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" placeholder="Julies" />
+            </div>
+            <div>
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" placeholder="Mark" />
+            </div>
+          </div>
+          <div class="email-container">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="JuliesMarkus@gmail.com"
+            />
+          </div>
+          <div class="phone-container">
+            <div>
+              <label for="phone">Phone</label>
+              <input type="text" id="phone" placeholder="+251992934232" />
+            </div>
+            <div class="time--container">
+              <label for="time">Time</label>
+              <input type="time" id="time" />
+              <i class="ri-time-line"></i>
+            </div>
+          </div>
+          <div class="date-container">
+            <div class="date--container">
+              <label for="date">Date</label>
+              <input type="date" id="date" />
+              <i class="ri-calendar-line"></i>
+            </div>
+            <div>
+              <label for="person">Person</label>
+              <input type="number" id="person" />
+            </div>
+          </div>
+          <button type="submit" class="button btn-primary reservation-btn">
+            BOOK YOUR TABLE
+          </button>
+        </form>
+        <p class="error-msg"></p>
+      </div>
+    </section>
     <footer class="footer grid">
       <div class="footer-content grid">
         <div class="footer-column footer-about">
@@ -65,19 +134,24 @@
           </div>
 
           <div class="footer-socials">
-            <a href="#">
-              <svg class="icon icon1">
-                <use href="./assets/icons.svg#icon-facebook"></use>
-              </svg>
-            </a>
-            <a href="#">
+            <a href="https://instagram.com/e.b.b.o">
               <svg class="icon icon1">
                 <use href="./assets/icons.svg#icon-instagram"></use>
               </svg>
             </a>
-            <a href="#">
+            <a href="https://t.me/Dev_eee">
               <svg class="icon icon1">
                 <use href="./assets/icons.svg#icon-telegram"></use>
+              </svg>
+            </a>
+            <a href="https://github.com/e-b-b-o">
+              <svg class="icon icon1">
+                <use href="./assets/icons.svg#icon-github"></use>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/eba-gech-73aa21358">
+              <svg class="icon icon1">
+                <use href="./assets/icons.svg#icon-linkedin"></use>
               </svg>
             </a>
           </div>
@@ -87,12 +161,13 @@
           <div class="footer-links-container">
             <h3>Pages</h3>
             <ul>
-              <li class="footer-lists"><a href="menu.html">Menu</a></li>
+              <li class="footer-lists"><a href="index.html">Home</a></li>
               <li class="footer-lists"><a href="about.html">About</a></li>
-              <li class="footer-lists"><a href="contact.html">Contact</a></li>
+              <li class="footer-lists"><a href="menu.html">Menu</a></li>
               <li class="footer-lists">
-                <a href="index.html#reservation">Reservation</a>
+                <a href="book_a_table.html">Reservation</a>
               </li>
+              <li class="footer-lists"><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="footer-contact">
