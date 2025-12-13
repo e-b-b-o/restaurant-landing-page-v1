@@ -309,8 +309,6 @@ if (journey && journeyTitle && journeyCard && journeyCard.length > 0) {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // CSS for the About journey section uses the `active` class.
-          // Add `active` so transitions defined in CSS are applied.
           journeyTitle.classList.add("active");
           journeyCard.forEach((card, index) => {
             setTimeout(() => {
@@ -341,14 +339,12 @@ const menuSearch = document.querySelector("#menu-search");
 const menuFilterBtns = document.querySelector(".filters");
 
 if (menuPageSection) {
-  // helper: animate menu elements (re-queries `.menu-item` to pick up newly rendered items)
   function animateMenuPage() {
     if (menuPageTitle) menuPageTitle.classList.add("active");
     if (menuIntro) menuIntro.classList.add("active");
     if (menuFilterBtns) menuFilterBtns.classList.add("active");
     if (menuSearch) menuSearch.classList.add("active");
 
-    // Re-query items in case they were rendered after initial script run
     const items = Array.from(document.querySelectorAll(".menu-item"));
     if (items.length > 0) {
       items.forEach((item, index) => {
@@ -426,3 +422,11 @@ if (contactDirectly) {
   );
   contactDirectlyObserver.observe(contactDirectly);
 }
+
+import { setActiveLinks } from "./utils/activeLinks.js";
+import { initFiltersHighlight } from "./components/filtersHighlight.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  setActiveLinks();
+  initFiltersHighlight();
+});

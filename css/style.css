@@ -265,6 +265,12 @@ a .button {
   color: var(--accent-color);
   cursor: pointer;
 }
+/* Ensure anchor links with the `active` class take the accent color (higher specificity) */
+.nav__item a.highlight,
+.footer-lists a.highlight,
+a.highlight {
+  color: var(--accent-color);
+}
 .nav__toggler {
   opacity: 0.7;
   cursor: pointer;
@@ -1365,6 +1371,13 @@ footer h3 {
   background-color: var(--accent-color);
   font-size: 1.3rem;
   transition: background-color 0.3s;
+}
+.highlight {
+  color: black;
+}
+.filters button.highlight {
+  background-color: black;
+  color: var(--accent-color);
 }
 .filters button:hover {
   background-color: black;
