@@ -433,3 +433,11 @@ document.addEventListener("DOMContentLoaded", () => {
   setActiveLinks();
   initFiltersHighlight();
 });
+
+import { initContactValidation } from "./components/initContactValidation.js";
+
+try {
+  initContactValidation();
+} catch (error) {
+  console.error("initContactValidation threw an error:", error);
+}
