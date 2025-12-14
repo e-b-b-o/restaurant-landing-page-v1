@@ -1,7 +1,7 @@
 // src/js/components/search.js
 
 import { menuItems } from "../data/menu.js";
-import { renderMenu } from "./renderMenu.js";
+import { setPaginationItems } from "./pagination.js";
 import { debounce } from "../utils/dom.js";
 
 export function initSearch(menuContainer) {
@@ -14,7 +14,7 @@ export function initSearch(menuContainer) {
       `${item.name} ${item.ingredients}`.toLowerCase().includes(text)
     );
 
-    renderMenu(menuContainer, filtered);
+    setPaginationItems(menuContainer, filtered);
   }, 300);
 
   searchInput.addEventListener("input", handleSearch);

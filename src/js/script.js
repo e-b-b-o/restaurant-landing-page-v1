@@ -254,7 +254,6 @@ if (_footerSection && footerAbout && footerLinks && footerBottom) {
 
 // Menu render , filter , search and pagination
 
-import { renderMenu } from "./components/renderMenu.js";
 import { initFilters } from "./components/filters.js";
 import { initSearch } from "./components/search.js";
 import { initPagination } from "./components/pagination.js";
@@ -263,8 +262,6 @@ import { initBooking } from "./components/booking.js";
 const menuContainer = document.querySelector(".menu-container");
 
 if (menuContainer) {
-  renderMenu(menuContainer, []);
-
   // Initialize features that depend on the menu container
   initFilters(menuContainer);
   initSearch(menuContainer);
@@ -345,12 +342,18 @@ if (menuPageSection) {
     if (menuFilterBtns) menuFilterBtns.classList.add("active");
     if (menuSearch) menuSearch.classList.add("active");
 
-    const items = Array.from(document.querySelectorAll(".menu-item"));
-    if (items.length > 0) {
-      items.forEach((item, index) => {
+    // Only animate items that don't already have the active class. This
+    // prevents previously shown items from being re-animated and ensures
+    // newly appended items become visible.
+    const itemsToAnimate = Array.from(
+      document.querySelectorAll(".menu-item")
+    ).filter((i) => !i.classList.contains("active"));
+
+    if (itemsToAnimate.length > 0) {
+      itemsToAnimate.forEach((item, idx) => {
         setTimeout(() => {
           item.classList.add("active");
-        }, 500 + index * 150);
+        }, 500 + idx * 150);
       });
     }
   }
@@ -414,7 +417,7 @@ if (contactDirectly) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           contactDirectly.classList.add("active");
-          contactDirectly.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
     },

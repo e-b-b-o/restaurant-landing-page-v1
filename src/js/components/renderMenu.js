@@ -18,7 +18,12 @@ export function renderMenu(container, items) {
   // Useful when menu items are rendered dynamically and other logic (like
   // animations) should run only after DOM is updated.
   try {
-    const event = new CustomEvent("menu:rendered", { bubbles: true });
+    // Include the items in the event detail so listeners can react to the
+    // current dataset (filters/search) when needed.
+    const event = new CustomEvent("menu:rendered", {
+      bubbles: true,
+      detail: { items },
+    });
     container.dispatchEvent(event);
   } catch (err) {
     // Older browsers may not support CustomEvent constructor; fail silently.

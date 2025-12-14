@@ -2,7 +2,7 @@
 
 import { menuItems } from "../data/menu.js";
 import { qs } from "../utils/dom.js";
-import { renderMenu } from "./renderMenu.js";
+import { setPaginationItems } from "./pagination.js";
 
 export function initFilters(menuContainer) {
   const filterButtons = qs(".filters");
@@ -17,6 +17,7 @@ export function initFilters(menuContainer) {
         ? menuItems
         : menuItems.filter((item) => item.category === category);
 
-    renderMenu(menuContainer, filtered);
+    // Use pagination API so filters play nicely with "Load More"
+    setPaginationItems(menuContainer, filtered);
   });
 }
