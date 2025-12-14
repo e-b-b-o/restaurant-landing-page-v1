@@ -8,7 +8,7 @@ export const menuItems = [
     category: "starters",
     price: 4.99,
     ingredients: "Bread, garlic, butter, herbs",
-    image: "images/garlic_bread.webp",
+    image: "images/Garlic_bread.webp",
   },
   {
     id: 2,
