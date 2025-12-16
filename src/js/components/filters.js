@@ -17,7 +17,6 @@ export function initFilters(menuContainer) {
         ? menuItems
         : menuItems.filter((item) => item.category === category);
 
-    // Use pagination API so filters play nicely with "Load More"
     setPaginationItems(menuContainer, filtered);
   });
 }

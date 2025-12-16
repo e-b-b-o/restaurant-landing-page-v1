@@ -1362,7 +1362,7 @@ footer h3 {
   margin-top: 2rem;
   max-width: 600px;
   font-size: 1.8rem;
-  transition: box-shadow 0.3s;
+  font-family: "Times New Roman", Times, serif;
 }
 
 #menu-search:focus {
@@ -1397,7 +1397,7 @@ footer h3 {
 #menu-search {
   opacity: 0;
   transform: translateY(-50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: box-shadow 0.3s, opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .menu-page-title.active,
 .menu-intro.active,

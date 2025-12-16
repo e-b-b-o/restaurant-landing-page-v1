@@ -372,7 +372,8 @@ if (menuPageSection) {
 
   manuPageObserver.observe(menuPageSection);
 
-  // Also listen to menu render events to trigger animation when new items are added
+  // listen to menu render events to trigger animation when new items are added
+  
   const onMenuRendered = () => {
     const rect = menuPageSection.getBoundingClientRect();
     const inView = rect.top < window.innerHeight && rect.bottom >= 0;
